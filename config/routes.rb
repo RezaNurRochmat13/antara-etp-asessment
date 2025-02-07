@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   namespace 'api' do
     resources :articles
   end
+
+  root 'palindromes#index'
+  post 'palindromes/check', to: 'palindromes#check'
 end

@@ -1,0 +1,16 @@
+<h1>Palindrome Checker</h1>
+
+<%= form_with url: palindromes_check_path, method: :post, local: true do |form| %>
+  <div>
+    <%= form.label :word, "Enter a word or phrase:" %>
+    <%= form.text_field :word, required: true %>
+  </div>
+  <div>
+    <%= form.submit "Check" %>
+  </div>
+<% end %>
+
+<% if @result.present? %>
+  <h2>Result: <%= @result %></h2>
+<% end %>
+
