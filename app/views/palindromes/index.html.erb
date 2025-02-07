@@ -1,16 +1,19 @@
-<h1>Palindrome Checker</h1>
+<h1 class="text-3xl font-bold text-center my-6">Palindrome Checker</h1>
 
-<%= form_with url: palindromes_check_path, method: :post, local: true do |form| %>
-  <div>
-    <%= form.label :word, "Enter a word or phrase:" %>
-    <%= form.text_field :word, required: true %>
-  </div>
-  <div>
-    <%= form.submit "Check" %>
-  </div>
-<% end %>
+<div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+  <%= form_with url: palindromes_check_path, method: :post, local: true, class: "space-y-4" do |form| %>
+    <div>
+      <%= form.label :word, "Enter a word or phrase:", class: "block text-gray-700 font-medium mb-1" %>
+      <%= form.text_field :word, required: true, class: "w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+    </div>
+    <div>
+      <%= form.submit "Check", class: "w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300" %>
+    </div>
+  <% end %>
 
-<% if @result.present? %>
-  <h2>Result: <%= @result %></h2>
-<% end %>
-
+  <% if @result.present? %>
+    <h2 class="text-xl font-semibold text-center mt-4 text-gray-800">
+      Result: <%= @result %>
+    </h2>
+  <% end %>
+</div>
